@@ -8,7 +8,7 @@ interface Props {
 
 const TaskItem: React.FC<Props> = ({ task, onDeleteTask }) => {
   return (
-    <li>
+    <li className="task-item">
       {task.title} - {task.dueDate}
       <button onClick={() => onDeleteTask(task.id)}>Delete</button>
     </li>

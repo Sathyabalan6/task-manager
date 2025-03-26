@@ -25,9 +25,19 @@ const TaskForm: React.FC<Props> = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} required />
-      <input type="datetime-local" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
+    <form className="task-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Enter task..."
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
+      <input
+        type="datetime-local"
+        value={dueDate}
+        onChange={(e) => setDueDate(e.target.value)}
+      />
       <button type="submit">Add Task</button>
     </form>
   );

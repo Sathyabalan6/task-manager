@@ -10,7 +10,7 @@ interface Props {
 class TaskList extends Component<Props> {
   render() {
     return (
-      <ul>
+      <ul className="task-list">
         {this.props.tasks.map((task) => (
           <TaskItem key={task.id} task={task} onDeleteTask={this.props.onDeleteTask} />
         ))}
