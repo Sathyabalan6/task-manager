@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# 📋 Task Manager — React + TypeScript Productivity App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Vite](https://img.shields.io/badge/Vite-5.0+-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+[![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-Currently, two official plugins are available:
+An interactive, responsive task management and workflow scheduling application built with **React 18**, **TypeScript**, and **Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📝 **Task Management**: Create, edit, complete, and filter tasks seamlessly.
+- ⏰ **Reminders & Alerts**: Built-in reminder component (`Reminder.tsx`) for tracking approaching deadlines.
+- 💾 **Local Storage Persistence**: Modular state persistence layer (`src/utils/localStorage.ts`) ensuring zero data loss on refresh.
+- ⚡ **Fast Vite Build System**: Lightning-fast Hot Module Replacement (HMR) powered by Vite.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 📁 File Structure
+
+```
+task-manager/
+├── src/
+│   ├── components/
+│   │   ├── TaskManager.tsx    # Parent wrapper component
+│   │   ├── TaskList.tsx       # Filterable list component
+│   │   ├── TaskItem.tsx       # Individual task item card
+│   │   ├── TaskForm.tsx       # Creation & edit form modal
+│   │   └── Reminder.tsx       # Notification and deadline reminder component
+│   ├── utils/
+│   │   └── localStorage.ts    # Browser local storage utilities
+│   ├── App.tsx                # Main app layout
+│   └── main.tsx               # React application mounting
+├── index.html
+└── vite.config.ts             # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Quickstart & Setup
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Prerequisites
+- Node.js `18.x` or later
+- `npm`
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Sathyabalan6/task-manager.git
+cd task-manager
+
+# Install dependencies
+npm install
+
+# Start Vite dev server
+npm run dev
 ```
+
+Open `http://localhost:5173` in your browser.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
